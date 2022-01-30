@@ -55,13 +55,13 @@ function game() {
     
 
     if (score >= 3) {
-        console.log("You won the game!!!")
-        alert("You won the game!!!")
+        console.log("You won the game!!! Your score was " + score)
+        alert("You won the game!!!" + score)
     }
 
     if (score < 3) {
         console.log("You lost the game, better luck next time! Your score was " + score)
-        alert("You won the game!!! Your score was" + score)
+        alert("You lost the game!!! Your score was " + score)
     }
 
 
