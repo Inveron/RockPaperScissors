@@ -59,7 +59,7 @@ function game() {
         alert("You won the game!!!")
     }
 
-    else {
+    if (score <= 3) {
         console.log("You lost the game, better luck next time!")
         alert("You won the game!!!")
     }
