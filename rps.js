@@ -40,32 +40,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let computerSelection = '';
-    let playerSelection = '';
-
-    alert("Final results are also shown in the console!");
-    
-    playRound(computerSelection, playerSelection);
-    playRound(computerSelection, playerSelection);
-    playRound(computerSelection, playerSelection);
-    playRound(computerSelection, playerSelection);
-    playRound(computerSelection, playerSelection);
-
-    
-
-    if (score >= 3) {
-        console.log("You won the game!!! Your score was " + score)
-        alert("You won the game!!!" + score)
-    }
-
-    if (score < 3) {
-        console.log("You lost the game, better luck next time! Your score was " + score)
-        alert("You lost the game!!! Your score was " + score)
-    }
 
 
-}
-
-game();
-
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
