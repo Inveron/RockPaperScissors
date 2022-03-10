@@ -23,41 +23,46 @@ function playRound(playerSelection, computerSelection) {
 
     if (playerSelection != computerSelection) {
         if (playerSelection == "rock" && computerSelection == "scissors") {
-            document.getElementById("res").textContent = ("Rock beats scissors, you won! Score: " + score);
             score++;
             round++;
+            document.getElementById("res").textContent = ("Rock beats scissors, you won! Score: " + score);
         }
 
         else if (playerSelection == "paper" && computerSelection == "rock") {
-            document.getElementById("res").textContent = ("Paper beats rock, you won! Score: " + score);
             score++;
             round++;
+            document.getElementById("res").textContent = ("Paper beats rock, you won! Score: " + score);
         }
 
         else if (playerSelection == "scissors" && computerSelection == "paper") {
-            document.getElementById("res").textContent = ("Scissors beats paper, you won! Score: " + score);
             score++;
             round++;
+            document.getElementById("res").textContent = ("Scissors beats paper, you won! Score: " + score);
+            
         }
 
         else {
-            document.getElementById("res").textContent = ("You lost this round! Score: " + score);
             round++;
+            document.getElementById("res").textContent = ("You lost this round! Score: " + score);
+            
         }
+    
+        if (round == 5) {
+            if (score >= 3) {
+                document.getElementById("res").textContent = ("You won this game with a score of: " + score);
+            }
+        
+            else{
+                document.getElementById("res").textContent = ("You lost this game with a score of: " + score);
+            }
+        
+            round = round - round;
+            score = score - score;
+        }
+    
     }
 }
 
-if (round == 5) {
-    if (score >= 3) {
-        document.getElementById("res").textContent = ("You won this game with a score of: " + score);
-    }
 
-    else{
-        document.getElementById("res").textContent = ("You lost this game with a score of: " + score);
-    }
-
-    round = 0;
-    score = 0;
-}
 
 
