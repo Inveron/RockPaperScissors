@@ -16,18 +16,19 @@
             display: flex;
             justify-content: center;
             list-style: none;
-            flex-direction: row;
+            
         }
 
         li {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
         }
 
         .results {
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
     </style>
     <title>Rock Paper Scissors</title>
@@ -40,22 +41,22 @@
     <div>
         <ul class="buttons">
             <li>
-                <button id="rock">Rock</button>
+                <button id="rock" onclick="playRound('rock')">Rock</button>
             </li>
                 
             <li>
-                <button id="paper">Paper</button>
+                <button id="paper" onclick="playRound('paper')">Paper</button>
             </li>
                 
             <li>
-                <button id="scissors">Scissors</button>
+                <button id="scissors" onclick="playRound('scissors')">Scissors</button>
             </li>
         </ul>
     </div>
 
     <div class="results">
-        <h3>Results</h3>
-        <p>Put score here</p>
+        <h2>Results</h2>
+        <p id="res">Put score here</p>
     </div>
 </body>
 </html>

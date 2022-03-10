@@ -1,4 +1,6 @@
 let score = 0;
+const res = document.querySelector('p');
+let round = 0;
 
 function computerPlay() {
     let choices = ['rock', 'paper', 'scissors'];
@@ -10,38 +12,52 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
-    playerSelection = prompt("Whats your move?");
+    
     
     playerSelection.toLowerCase();
 
     if (playerSelection == computerSelection) {
-        alert("Draw!");
+        document.getElementById("res").textContent = ("Draw! Score: " + score);
+        round++;
     }
 
     if (playerSelection != computerSelection) {
         if (playerSelection == "rock" && computerSelection == "scissors") {
-            alert("Rock beats scissors, you won!");
+            document.getElementById("res").textContent = ("Rock beats scissors, you won! Score: " + score);
             score++;
+            round++;
         }
 
         else if (playerSelection == "paper" && computerSelection == "rock") {
-            alert("Paper beats rock, you won!");
+            document.getElementById("res").textContent = ("Paper beats rock, you won! Score: " + score);
             score++;
+            round++;
         }
 
         else if (playerSelection == "scissors" && computerSelection == "paper") {
-            alert("Scissors beats paper, you won!");
+            document.getElementById("res").textContent = ("Scissors beats paper, you won! Score: " + score);
             score++;
+            round++;
         }
 
         else {
-            alert("You lost!");
+            document.getElementById("res").textContent = ("You lost this round! Score: " + score);
+            round++;
         }
     }
 }
 
+if (round == 5) {
+    if (score >= 3) {
+        document.getElementById("res").textContent = ("You won this game with a score of: " + score);
+    }
+
+    else{
+        document.getElementById("res").textContent = ("You lost this game with a score of: " + score);
+    }
+
+    round = 0;
+    score = 0;
+}
 
 
-const rock = document.querySelector("#rock");
-const paper = document.querySelector("#paper");
-const scissors = document.querySelector("#scissors");
